@@ -1,7 +1,7 @@
 #![cfg_attr(not(feature = "std"), no_std, no_main)]
 
 #[ink::contract]
-mod todo {
+mod my_todo {
 
     use ink::prelude::string::String;
     use ink::prelude::vec::Vec;
@@ -96,7 +96,7 @@ mod todo {
         }
 
         #[ink::test]
-        fn add_task_works() {
+        fn add_task() {
             let mut todo = Todo::new();
             let id = todo.add_task(String::from("Buy milk"));
             assert_eq!(id, 0);
@@ -108,7 +108,7 @@ mod todo {
         }
 
         #[ink::test]
-        fn complete_task_works() {
+        fn complete_task() {
             let mut todo = Todo::new();
             let id = todo.add_task(String::from("Buy milk"));
 
@@ -118,7 +118,7 @@ mod todo {
         }
 
         #[ink::test]
-        fn remove_task_works() {
+        fn remove_task() {
             let mut todo = Todo::new();
             let id = todo.add_task(String::from("Buy milk"));
 
